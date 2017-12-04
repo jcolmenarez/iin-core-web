@@ -1,0 +1,4 @@
+# Files and paths to ignore
+.DS_Store
+/assets
+/node_modules
