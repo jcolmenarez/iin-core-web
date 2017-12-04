@@ -1,0 +1,63 @@
+/*--- Layout ---*/
+.root-container {
+  display: block;
+  margin: 0 auto;
+  max-width: 960px;
+  min-width: 1px;
+  position: relative;
+  width: auto;
+}
+
+.main-header, .main-container, .main-footer {
+  display: block;
+  position: relative;
+}
+
+/*--- Header ---*/
+.main-header {
+
+  padding: 25px 0;
+  text-align: center;
+
+  figure {
+    margin-bottom: 10px;
+  }
+
+  &.auth-layout {
+
+    text-align: left;
+
+    &:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+
+    figure, h1 {
+      float: left;
+    }
+
+  }
+
+  h1 > span {
+    color: #aaa;
+    font-family: 'pn-regular';
+    font-size: .65em;
+    font-weight: normal;
+  }
+
+}
+
+/*--- Sidebar ---*/
+.main-sidebar {}
+
+/*--- Footer ---*/
+.main-footer{
+  
+  padding: 25px 0;
+
+  p {
+    text-align: center;
+  }
+
+}

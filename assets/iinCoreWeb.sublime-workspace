@@ -1,0 +1,1546 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"data",
+				"dataObjs"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"slec",
+				"selectedCC"
+			],
+			[
+				"bcP",
+				"bcPlayer"
+			],
+			[
+				"mime",
+				"mimeoUrl"
+			],
+			[
+				"miemo",
+				"mimeo-hash-string"
+			],
+			[
+				"regular",
+				"regularContentView"
+			],
+			[
+				"business",
+				"business-toolkit"
+			],
+			[
+				"busin",
+				"businessTools"
+			],
+			[
+				"content",
+				"contentSlot"
+			],
+			[
+				"all",
+				"allSubmissions"
+			],
+			[
+				"curren",
+				"currentlyShownResults"
+			],
+			[
+				"curr",
+				"currentlyShownResults"
+			],
+			[
+				"library",
+				"libraryTabs"
+			],
+			[
+				"libray",
+				"libraryTabs"
+			],
+			[
+				"mocked",
+				"mockedSectioner"
+			],
+			[
+				"enrol",
+				"enrollmentId"
+			],
+			[
+				"en",
+				"enrollmentId"
+			],
+			[
+				"iscope",
+				"isolatedScope"
+			],
+			[
+				"media",
+				"mediaCtrlScope"
+			],
+			[
+				"curre",
+				"currentFulfillment"
+			],
+			[
+				"rmeove",
+				"removeTitleDescriptionDock"
+			],
+			[
+				"add",
+				"addDynamicVideoTitle"
+			],
+			[
+				"adjus",
+				"adjustAudioUI"
+			],
+			[
+				"cur",
+				"currentTime"
+			],
+			[
+				"ser",
+				"serverDate"
+			],
+			[
+				"c",
+				"console"
+			],
+			[
+				"pro",
+				"progress"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"bc",
+				"brightcove"
+			],
+			[
+				"script",
+				"scriptTag"
+			],
+			[
+				"cont",
+				"containerScope"
+			],
+			[
+				"mo",
+				"modify"
+			],
+			[
+				"ful",
+				"fulfillmentMock"
+			],
+			[
+				"current",
+				"currentFulfillment"
+			],
+			[
+				"server",
+				"serverTimeMock"
+			],
+			[
+				"enro",
+				"enrollmentId"
+			],
+			[
+				"assignment",
+				"assignmentData"
+			],
+			[
+				"assign",
+				"assignmentData"
+			],
+			[
+				"get",
+				"getHeaders"
+			],
+			[
+				"time",
+				"timelimitsObj"
+			],
+			[
+				"t",
+				"timestamp"
+			],
+			[
+				"swi",
+				"switchCourse"
+			],
+			[
+				"user",
+				"userData"
+			],
+			[
+				"session",
+				"sessionId"
+			],
+			[
+				"ses",
+				"sessid"
+			],
+			[
+				"requi",
+				"requirements"
+			],
+			[
+				"meta",
+				"metadata"
+			],
+			[
+				"sc",
+				"strict"
+			],
+			[
+				"enroll",
+				"enrollmentID"
+			],
+			[
+				"check",
+				"checkForBuggyLoadingSpinner"
+			],
+			[
+				"medi",
+				"mediaCtrlScope"
+			],
+			[
+				"enrollment",
+				"enrollmentID"
+			],
+			[
+				"is",
+				"isTaskMedia"
+			],
+			[
+				"max-",
+				"max-width"
+			],
+			[
+				"min-",
+				"min-width"
+			],
+			[
+				"bcPLayer",
+				"bcPlayerLoadedAndReady"
+			],
+			[
+				"timeou",
+				"globalTimeoutTimer"
+			],
+			[
+				"err",
+				"errorDisplay"
+			],
+			[
+				"fro",
+				"frozenPlayerTimer"
+			],
+			[
+				"actual",
+				"actualPlaybackFlag"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"remove",
+				"removeClass"
+			],
+			[
+				"show",
+				"showDefaultImg"
+			],
+			[
+				"miem",
+				"mimeoData"
+			],
+			[
+				"headers",
+				"headersGetter"
+			],
+			[
+				"docum",
+				"document_category"
+			],
+			[
+				"do",
+				"document"
+			],
+			[
+				"link",
+				"link_resources"
+			],
+			[
+				"redir",
+				"redirect_url"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"fo",
+				"font-size"
+			],
+			[
+				"parse",
+				"parsedTimeObj"
+			],
+			[
+				"error",
+				"errorSettings"
+			],
+			[
+				"seek",
+				"seektime"
+			],
+			[
+				"padding",
+				"padding"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"un",
+				"unusefulSpaces"
+			],
+			[
+				"words",
+				"wordsArr"
+			],
+			[
+				"padding-",
+				"padding-left"
+			],
+			[
+				"httPb",
+				"httpBackend"
+			],
+			[
+				"playAt",
+				"playAtCounter"
+			],
+			[
+				"play",
+				"playAtCounter"
+			],
+			[
+				"marin",
+				"margin-left"
+			],
+			[
+				"caption",
+				"captionsButtonComponent"
+			],
+			[
+				"selec",
+				"selectedIndex"
+			],
+			[
+				"selece",
+				"selectedIndex"
+			],
+			[
+				"cou",
+				"courseCallParams"
+			],
+			[
+				"Get",
+				"getOutline"
+			],
+			[
+				"app",
+				"appBuildId"
+			],
+			[
+				"async",
+				"asyncPlayback"
+			],
+			[
+				"mobile",
+				"mobile1stPlaybackRoute"
+			],
+			[
+				"mobil",
+				"mobileFirstPlaybackRoute"
+			],
+			[
+				"root",
+				"rootScope"
+			],
+			[
+				"filter",
+				"filtersGroup"
+			],
+			[
+				"targe",
+				"targetScope"
+			],
+			[
+				"modul",
+				"moduleInfo"
+			],
+			[
+				"attr",
+				"attributes"
+			],
+			[
+				"targ",
+				"targetObj"
+			],
+			[
+				"box",
+				"boxTopPos"
+			],
+			[
+				"tit",
+				"titleTopPos"
+			],
+			[
+				"scroll",
+				"scrollTop"
+			],
+			[
+				"wr",
+				"wrapTT"
+			],
+			[
+				"jarvis",
+				"jarvisMock"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"from",
+				"fromBeginning"
+			],
+			[
+				"cera",
+				"createSpy"
+			],
+			[
+				"serve",
+				"serverTimeMock"
+			],
+			[
+				"defer",
+				"deferred_serverTime"
+			],
+			[
+				"create",
+				"createSpy"
+			],
+			[
+				"toB",
+				"toBeDefined"
+			],
+			[
+				"req",
+				"reqText"
+			],
+			[
+				"if",
+				"if\tif"
+			],
+			[
+				"pla",
+				"playerError"
+			],
+			[
+				"pl",
+				"bcPlayer"
+			],
+			[
+				"player",
+				"playerInstance"
+			],
+			[
+				"var",
+				"vars"
+			],
+			[
+				"mocke",
+				"mockedRoute"
+			],
+			[
+				"mock",
+				"mockedJarvis"
+			],
+			[
+				"redirec",
+				"redirectToZendesk"
+			],
+			[
+				"def",
+				"deferred_user"
+			],
+			[
+				"de",
+				"deferred_enrollment"
+			],
+			[
+				"moc",
+				"mockedUser"
+			],
+			[
+				"mok",
+				"mockedJarvis"
+			],
+			[
+				"mockd",
+				"mockedJarvis"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/jcolmenarez/Sites/projects/iin-core-web/api/api.controllers.js",
+			"settings":
+			{
+				"buffer_size": 1151,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/components/ms-excel-importer/ms-excel-importer.module.js",
+			"settings":
+			{
+				"buffer_size": 1530,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/components/ms-excel-importer/ms-excel-importer.service.js",
+			"settings":
+			{
+				"buffer_size": 425,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/components/ms-excel-importer/importer-form/importer-form.component.js",
+			"settings":
+			{
+				"buffer_size": 2862,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/components/ms-excel-importer/importer-results/importer-results.component.js",
+			"settings":
+			{
+				"buffer_size": 2237,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "in",
+		"selected_items":
+		[
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"install p",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ip",
+				"Package Control: Install Package"
+			],
+			[
+				"lp",
+				"Package Control: List Packages"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/jcolmenarez/Sites/projects/iin-core-web",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/api",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/components",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/components/ms-excel-importer",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/components/ms-excel-importer/importer-form",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/components/ms-excel-importer/importer-results"
+	],
+	"file_history":
+	[
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/iinCoreWeb.server.js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/components/ms-excel-importer/importer-form/importer-form.less",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/components/components.module.js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/ms-sql.js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/api/api.routes.js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/iinCoreWeb.server.BABEL_COMPILED.js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/components/ms-excel-importer/ms-excel-importer.service.js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/components/ms-excel-importer/importer-results/importer-results.component.js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/components/ms-excel-importer/importer-form/importer-form.component.js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/package.json",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/components/ms-excel-importer/ms-excel-importer.module.js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/api/api.routes.BABEL_COMPILED.js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/api/api.controllers.BABEL_COMPILED.js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/api/api.controllers.js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/css/base.less",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/css/styles.less",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/index.html",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/common/common.module.js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/common/load-script.common.directive.js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/vendor/xlsx.full.min.js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/root.module.js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/root.component.js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/common/common.component.js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/components/auth/login/login.component.js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/components/auth/auth.module.js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/common/header/header.component.js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/css/layout.less",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/common/sidebar/sidebar.component.js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/css/fonts.less",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/css/reset.less",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/css/styles.css",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/vendor/less.min.js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/common/footer/footer.component.js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/common/loading/loading.component.js",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/package-lock.json",
+		"/Users/jcolmenarez/Sites/projects/iin-core-web/assets/iinCoreWeb.sublime-project",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/package.json",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/gulpfile.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/common/global.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/css/fonts.css",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/css/fonts.less",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/common/directives/bcPlayer.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/classroom/partials/activity.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/classroom/partials/single-module.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/classroom/partials/assignment.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/classroom/partials/healthHistoryTimeline.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/library/controllers/library.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/classroom/controllers/classroom.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/classroom/partials/module-nav.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/classroom/timeline.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/classroom/directives/classroom.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/documents/controllers/document.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/documents/views/document.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/documents/documents.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/documents/routes/documents.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/.git/MERGE_MSG",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/business-toolkit/controllers/business-toolkit.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/business-toolkit/business-toolkit.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/common/directives/dashboard.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/classroom/routes/timeline.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/library/library.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/library/routes/library.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/business-toolkit/css/business-toolkit.less",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/business-toolkit/partials/tabbed-content.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/business-toolkit/partials/mimeo-business-tool.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/business-toolkit/partials/tabbed-icons.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/business-toolkit/routes/business-toolkit.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/common/main.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/common/routes/oneRoute.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/common/routes/routes.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/common/dashboard.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/common/directives/ui.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/common/directives/components.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/common/ieChecker.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/index.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/common/controllers/dashboard.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/documents/controllers/documents.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/quiz/exam.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/quiz/controllers/exam.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/common/services/webform.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/common/services/node.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/quiz/services/quiz.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/library/services/library.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/sectioner/views/timetable.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/library/directives/tabs.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/library/css/library.less",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/privacy-policy/privacy-policy.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/privacy-policy/privacy-policy.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/common/services/footer.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/library/views/article.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/library/views/audio.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/library/views/event.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/library/views/slides.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/library/views/video.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/common/controllers/menu.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/common/services/boot.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/common/services/jarvis.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/initial-setup/routes/initial-setup.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/presentation/routes/presentation.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/common/services/menu.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/mobile-onboarding/routes/mobile-onboarding.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/presentation/controllers/presentation.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/mobile-onboarding/controllers/mobile-onboarding.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/initial-setup/controllers/congrats.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/initial-setup/congrats.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/core/viewport-units-buggyfill.hacks.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/common/partials/bcPlayer.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/static/declined.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/common/partials/errors.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/drupal/static/en/strings.json",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/tos/controllers/tos.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/tos/tos.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/tos/routes/tos.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/quiz/css/quiz.less",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/quiz/quiz.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/settings/css/settings.less",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/settings/views/profile.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/media/controllers/media.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/classroom/css/course-outline.less",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/css/base.less",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/assignment/controllers/assignmentForm.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/modules/classroom/partials/module.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/gulptests.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/jasmine/unit-tests.html",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/drupal/sites/all/modules/iin_staff/iin_staff_courses/css/iin_staff_courses.css",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/jasmine/jUnitBoot.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/jasmine/boot.js",
+		"/Users/jcolmenarez/Sites/projects/techaid_iin_vagrant-drupal/project/school/jasmine/jasmine2-runner.js"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"MSExcelImporterServices",
+			"xlsxSrc",
+			"firstSheetName",
+			"NPAW_Script",
+			"provide",
+			"XLSX",
+			"module.exports",
+			"module.export",
+			"export",
+			"authConfigBlock",
+			"rootRunBlock",
+			"rootConfigBlock",
+			"loginState",
+			";"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/jcolmenarez/Sites/projects/iin-core-web/api/api.controllers.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1151,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1138,
+								1138
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1144,
+										1145
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1060,
+										1061
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/components/ms-excel-importer/ms-excel-importer.module.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1530,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								368,
+								373
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/components/ms-excel-importer/ms-excel-importer.service.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 425,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								281,
+								281
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										360,
+										361
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"region.yellowish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										178,
+										179
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/components/ms-excel-importer/importer-form/importer-form.component.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2862,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								655,
+								655
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1303,
+										1304
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										44,
+										45
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 783.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/jcolmenarez/Sites/projects/iin-core-web/www/js/app/components/ms-excel-importer/importer-results/importer-results.component.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2237,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1594,
+								1594
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1600,
+										1601
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1429,
+										1430
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 498.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.errorlist":
+	{
+		"height": 57.0
+	},
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "iinCoreWeb.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"strings",
+				"drupal/static/en/strings.json"
+			],
+			[
+				"app.dom",
+				".build/js/app.dom.min.js"
+			],
+			[
+				"string",
+				"docroot/static/en/strings.json"
+			],
+			[
+				"settings.php",
+				"drupal/sites/default/local.settings.php"
+			],
+			[
+				"midc",
+				"docroot/sites/all/modules/features/iin_course_resources/templates/mid-course-certificate.tpl.php"
+			],
+			[
+				"tracker",
+				"school/core/tracker.js"
+			],
+			[
+				"conversion",
+				"node_modules/gulp-minify-html/node_modules/minimize/node_modules/diagnostics/node_modules/color/node_modules/color-convert/conversions.js"
+			],
+			[
+				"strings_ios",
+				"docroot/static/en/strings_iOS.json"
+			],
+			[
+				"ios",
+				"docroot/static/en/strings_iOS.json"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Documents/Proyectos de Trabajo/Institute Integrative Nutrition/iin-next.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 189.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

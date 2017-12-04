@@ -1,0 +1,79 @@
+/*--- Global Settings ---*/
+@font-size: 16px;
+
+@appBg: #f9f9fb;
+@borderColor: #c5ced5;
+@default: #3b434e;
+@primary: #338A86;
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*--- Mixins ---*/
+.defaultFont() {
+  font-family: 'pn-regular', sans-serif;
+  font-size: @font-size;
+  font-weight: normal;
+  line-height: @font-size * 1.25;
+}
+
+.semiBold() {
+  font-family: 'pn-semibold', sans-serif;
+}
+
+/*--- Base Styles ---*/
+html, body {
+  .defaultFont();
+  background: @appBg;
+  color: @default;
+}
+
+a {
+  color: @primary;
+  text-decoration: none;
+
+  &:hover, &:focus, &:hover i, .active {
+    color: #146C66;
+  }
+
+}
+
+strong {
+  .semiBold();
+}
+
+small {
+  font-size: .75em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  .semiBold();
+}
+
+h1 {
+  font-size: @font-size * 1.25;
+}
+
+h2 {
+  font-size: @font-size * 1.125;
+}
+
+.h2(){
+  .semiBold();
+  font-size: @font-size * 1.125;
+}
+
+h3 {
+  .defaultFont();
+}
+
+hr {
+  border: 0 none;
+  border-bottom: 1px @borderColor solid;
+  width: 100%;
+  margin: 1em auto;
+  height: 0;
+}

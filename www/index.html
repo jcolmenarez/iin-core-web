@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app="root" ng-strict-di>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>IIN Core Web</title>
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+        <link href="css/styles.less" rel="stylesheet/less" type="text/css">
+    </head>
+    
+    <body>
+        <!-- App's root component element -->
+        <root>
+            <!-- Reusable loading component element -->
+            <loading></loading>
+        </root>
+        
+        <!-- Vendor JS libraries -->
+        <script type="text/javascript">
+            less = {env: 'development'};
+        </script>
+        <script src="js/vendor/less.min.js" type="text/javascript"></script>
+        <script src="js/vendor/jquery.min.js" type="text/javascript"></script>
+        <script src="js/vendor/xlsx.full.min.js" type="text/javascript"></script>
+        <script src="js/vendor/angular.min.js" type="text/javascript"></script>
+        <script src="js/vendor/angular-ui-router.min.js" type="text/javascript"></script>
+
+        <!-- Actual App's files -->
+        <script src="js/app/root.module.js" type="module"></script>
+
+    </body>
+
+</html>
