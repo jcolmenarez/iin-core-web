@@ -193,7 +193,7 @@
         li {
             font-family: 'pn-semibold', sans-serif;
             font-size: 1em;
-            margin-bottom: 10px;
+            margin-bottom: 25px;
             position: relative;
 
             &.error {
@@ -203,12 +203,22 @@
             &.success {
                 color: #338a86;
             }
+
+            .status-entry {
+                display: block;
+                padding-left: 20px;
+            }
         }
 
         .download-results-log {
             display: inline-block;
             margin-top: 20px;
             position: relative;
+
+            &.disabled, &.disabled:hover, &.disabled i, &.disabled:hover i {
+                color: #aaa;
+                cursor: not-allowed;
+            }
         }
 
     }

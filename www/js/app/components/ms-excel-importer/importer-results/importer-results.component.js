@@ -1,93 +1,5 @@
 export const MSExcelImporterResultsComponent = {
-        template: `
-            <section class="component-container" id="ms-excel-importer-results-container">
-
-                <div class="loading-container" ng-show="$ctrl.isLoading">
-                    <span>
-                        <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-                        Loading...
-                    </span>
-                </div>
-
-                <div class="results-container" ng-if="!$ctrl.isLoading && $ctrl.showingResults">
-
-                    <p class="results-list-title">Results List:</p>
-                    <ul>
-                        <li ng-class="{
-                                'pending': !result.isComplete,
-                                'error': result.isComplete && result.isError,
-                                'success': result.isComplete && !result.isError
-                            }" ng-repeat="result in $ctrl.results">
-                            <i ng-class="[
-                                    'fa',
-                                    'fa-li',
-                                    {
-                                        'fa-exclamation-circle': result.isComplete && result.isError,
-                                        'fa-check-circle': result.isComplete && !result.isError,
-                                        'fa-spinner fa-fw': !result.isComplete
-                                    }
-                                ]"></i>{{ result.message }}
-                        </li>
-                    </ul>
-
-                    <a class="download-results-log" ng-href="{{ $ctrl.resultsList() }}" download="results-log.txt">
-                        <i class="fa fa-arrow-down"></i>
-                        Download results log file
-                    </a>
-
-                </div>
-
-                <form id="db-config-form" ng-if="!$ctrl.isLoading && !$ctrl.showingResults">
-
-                    <button class="btn btn-primary" id="update-db-config-btn" type="button" ng-click="$ctrl.shouldUpdateDBConfig()">
-                        <i class="fa fa-database"></i>
-                        {{ !$ctrl.dbConfigHasChanged ? 'Update DB Configuration' : 'Use default DB Configuration' }}
-                    </button>
-
-                    <div class="form-control-group" ng-show="$ctrl.dbConfigHasChanged" ng-repeat="(key, value) in $ctrl.dbNewConfig">
-
-                        <label for="{{ key }}">{{ $ctrl.dbConfigFieldsInfo[key].name }}</label>
-                        <input ng-model="$ctrl.dbNewConfig[key]" name="{{ key }}" placeholder="{{ $ctrl.dbConfigFieldsInfo[key].placeholder }}" type="{{ $ctrl.dbConfigFieldsInfo[key].type }}" />
-
-                    </div>
-
-                </form>
-
-                <h3 ng-if="!$ctrl.isLoading && !$ctrl.showingResults">{{ ::$ctrl.title }}</h3>
-
-                <table class="table table-striped" ng-if="!$ctrl.isLoading && !$ctrl.showingResults">
-
-                    <thead>
-                    
-                        <th ng-if="$ctrl.isEventPromoCodeMode">Event IDs</th>
-                        <th>Student IDs</th>
-                        <th ng-if="$ctrl.isEventPromoCodeMode">Promo Codes</th>
-                        <th ng-if="$ctrl.isEventPromoCodeMode">Activated</th>
-
-                    </thead>
-                    
-                    <tbody>
-                    
-                        <tr ng-repeat="row in $ctrl.excelData">
-
-                            <td ng-if="$ctrl.isEventPromoCodeMode">{{ ::row.EventId }}</td>
-                            <td>{{ ::row.StudentId }}</td>
-                            <td ng-if="$ctrl.isEventPromoCodeMode">{{ ::row.PromotionCode }}</td>
-                            <td ng-if="$ctrl.isEventPromoCodeMode">{{ ::row.Activated }}</td>
-
-                        </tr>
-
-                    </tbody>
-
-                </table>
-
-                <button class="btn btn-upload" ng-click="$ctrl.submitExcelData()" ng-if="!$ctrl.isLoading && !$ctrl.showingResults" type="button">
-                    <i class="fa fa-arrow-up"></i>
-                    Submit Excel data
-                </button>
-
-            </section>
-        `,
+        templateUrl: 'js/app/components/ms-excel-importer/importer-results/importer-results.html',
         controller: MSExcelImporterResultsController
     };
 
@@ -104,9 +16,9 @@ function MSExcelImporterResultsController ($filter, $stateParams, MSExcelImporte
         ctrl.excelData = $stateParams.excelData;
         ctrl.courseId = $stateParams.courseId;
         ctrl.isEventPromoCodeMode = $stateParams.isEventPromoCodeMode;
-        ctrl.isLoading = false;
+        ctrl.isProcessingCompleted = false;
         ctrl.showingResults = false;
-        ctrl.results = [];
+        ctrl.results = {};
         ctrl.dbConfigHasChanged = false;
         ctrl.dbNewConfig = {
             server: null,
@@ -114,7 +26,6 @@ function MSExcelImporterResultsController ($filter, $stateParams, MSExcelImporte
             database: null,
             user: null,
             password: null
-
         };
         ctrl.dbConfigFieldsInfo = {
             server: {
@@ -154,80 +65,129 @@ function MSExcelImporterResultsController ($filter, $stateParams, MSExcelImporte
 
     this.submitExcelData = () => {
 
-        ctrl.isLoading = true;
-        ctrl.showingResults = false;
+        ctrl.showingResults = true;
 
         angular.forEach(ctrl.excelData, row => {
 
-            let postData = {'studentId': row.StudentId};
+            // Setting the initial state of the query in the results list that will be properly updated with the server response
+            let initialMssg = ctrl.isEventPromoCodeMode ? 'Event promotion code insertion' : 'Event enrollment';
+            ctrl.results[row.StudentId] = {
+                'isComplete': false,
+                'isError': false,
+                'messages': [
+                    `${initialMssg} for ${row.StudentId}:`,
+                    `${dateAndTimeInfo()}: The request has been created.`
+                ]
+            };
 
-            if (ctrl.isEventPromoCodeMode){
+        })
 
-                postData['eventId'] = row.EventId;
-                postData['promoCode'] = row.PromotionCode;
-                postData['activationCode'] = row.Activated;
-
-            } else {
-
-                postData['courseId'] = ctrl.courseId;
-
-            }
-
-            if (ctrl.dbConfigHasChanged){
-
-                postData['dbConfig'] = ctrl.dbNewConfig;
-
-            }
-
-            MSExcelImporterServices[ctrl.isEventPromoCodeMode ? 'insertEventPromotionCode' : 'enrollStudentInEvent'](postData).then(data => {
-
-                let dateAndTimeInfo = $filter('date')(new Date(), 'MM/dd/yyyy @ HH:mm'),
-                    initialMssg = ctrl.isEventPromoCodeMode ? 'The event promotion code insertion' : 'The event enrollment';
-
-                ctrl.results.push({
-                    'isError': false,
-                    'message': `${dateAndTimeInfo}: ${initialMssg} for the student ${row.StudentId} has been successful!`
-                });
-
-                ctrl.isLoading = false;
-                ctrl.showingResults = true;
-
-            }).catch(error => {
-                
-                console.log('error from submitExcelData=>',error);
-                
-                let isErrorDefined = angular.isDefined(error.data) && error.data !== null,
-                    err = isErrorDefined ? error.data.data : {'code': error.status, 'name': 'Undefined'},
-                    dateAndTimeInfo = $filter('date')(new Date(), 'MM/dd/yyyy @ HH:mm'),
-                    initialMssg = ctrl.isEventPromoCodeMode ? 'The event promotion code insertion' : 'The event enrollment',
-                    errorMssg = !isErrorDefined ?
-                        'Unknown error' :
-                        angular.isUndefined(err.originalError.info) ? err.originalError.message : err.originalError.info.message;
-
-                ctrl.results.push({
-                    'isError': true,
-                    'message': `${dateAndTimeInfo}: ${initialMssg} for the student ${row.StudentId} has failed due to the following reason: ${err.code} - ${err.name}: ${errorMssg}`
-                });
-                ctrl.isLoading = false;
-                ctrl.showingResults = true;
-
-            });
-
-        });
+        processRow(0);
 
     };
 
     this.resultsList = () => {
 
+        if ( !ctrl.isProcessingCompleted ) return false;
+
         let list = ['IIN CORE - Results Log File\n-----------------------------------------\n\n'];
 
         angular.forEach(ctrl.results, result => {
-            list.push('- ' + result.message + '\n');
+            let mssgs = result.messages.join('\n')
+            list.push('- ' + mssgs + '\n');
         });
 
         list = encodeURIComponent(list.join('\n\n'));
 
         return `data:text/plain;charset=utf-8,${list}`;
+
+    };
+
+    
+    const dateAndTimeInfo = () => {
+
+        return $filter('date')(new Date(), 'MM/dd/yyyy @ HH:mm');
+
+    };
+
+    const processRow = n => {
+
+        // Preparing the POST data
+        let row = ctrl.excelData[n],
+            postData = {'studentId': row.StudentId},
+            initialMssg = ctrl.isEventPromoCodeMode ? 'The event promotion code insertion' : 'The event enrollment';
+
+        ctrl.results[row.StudentId].messages.push(`
+            ${dateAndTimeInfo()}: The database query has been started.
+        `);
+
+        if (ctrl.isEventPromoCodeMode){
+
+            postData['eventId'] = row.EventId;
+            postData['promoCode'] = row.PromotionCode;
+            postData['activationCode'] = row.Activated;
+
+        } else {
+
+            postData['courseId'] = ctrl.courseId;
+
+        }
+
+        // Customizing the DB connection configuration info if requested
+        if (ctrl.dbConfigHasChanged){
+
+            let dbConfig = angular.copy(ctrl.dbNewConfig);
+            dbConfig['stream'] = true;
+            postData['dbConfig'] = dbConfig;
+
+        }
+
+        MSExcelImporterServices[ctrl.isEventPromoCodeMode ? 'insertEventPromotionCode' : 'enrollStudentInEvent'](postData).then(data => {
+
+            ctrl.results[row.StudentId].isComplete = true;
+            ctrl.results[row.StudentId].isError = false;
+            ctrl.results[row.StudentId].messages.push(`
+                ${dateAndTimeInfo()}: The request has been successfully completed.
+            `);
+
+            if ( ctrl.excelData.length > (n + 1) ){
+
+                processRow(n + 1);
+
+            } else {
+
+                ctrl.isProcessingCompleted = true;
+
+            }
+
+        }).catch(error => {
+            
+            console.log('error from submitExcelData=>',error);
+            
+            let isErrorDefined = angular.isDefined(error.data) && error.data !== null && angular.isDefined(error.data.data) && error.data.data !== null,
+                err = isErrorDefined ? error.data.data : {'code': error.status, 'name': 'Undefined'},
+                errorMssg = !isErrorDefined || angular.isUndefined(err.originalError) ?
+                    'Unknown error' :
+                    angular.isUndefined(err.originalError.info) ? err.originalError.message : err.originalError.info.message;
+
+            ctrl.results[row.StudentId].isComplete = true;
+            ctrl.results[row.StudentId].isError = true;
+            ctrl.results[row.StudentId].messages.push(`
+                ${dateAndTimeInfo()}: The request has failed due to the following reason: 
+                ${err.code} - ${err.name}: ${errorMssg}
+            `);
+
+            if ( ctrl.excelData.length > (n + 1) ){
+
+                processRow(n + 1);
+
+            } else {
+
+                ctrl.isProcessingCompleted = true;
+
+            }
+
+        });
 
     };
 

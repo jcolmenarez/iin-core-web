@@ -4,14 +4,21 @@ const mssql = require('mssql'),
         database: 'IIN.QA',
         user: 'iin_javi',
         password: 'Password01',
-        port: 1433
+        port: 1433,
+        stream: true
     };
+
+mssql.on('error', err => {
+
+    console.log('Global error handler: ', err);
+    // res.status(401).json({data: err});
+
+});
+
 
 export const enrollStudentInEvent = (req, res) => {
 
     console.log('Params passed to the API webservice =>', req.body);
-
-    mssql.close();
 
     (async function (){
 
@@ -28,32 +35,24 @@ export const enrollStudentInEvent = (req, res) => {
                 `);
 
             console.log('Successful connection: ', result);
+            (async function (){ try { mssql.close(); } catch (err){ console.log('Closing error!', err); } })();
             res.json({data: result});
 
         } catch (err){
 
             console.log('Connection Error: ', err);
+            (async function (){ try { mssql.close(); } catch (err){ console.log('Closing error!', err); } })();
             res.status(400).json({data: err});
 
         }
 
     })();
 
-
-    mssql.on('error', err => {
-
-        console.log('Error handler: ', err);
-        res.status(401).json({data: err});
-
-    });
-
 }
 
 export const insertEventPromotionCode = (req, res) => {
 
     console.log('Params passed to the API webservice =>', req.body);
-
-    mssql.close();
 
     (async function (){
 
@@ -66,23 +65,17 @@ export const insertEventPromotionCode = (req, res) => {
                 `);
 
             console.log('Successful connection: ', result);
+            (async function (){ try { mssql.close(); } catch (err){ console.log('Closing error!', err); } })();
             res.json({data: result});
 
         } catch (err){
 
             console.log('Connection Error: ', err);
+            (async function (){ try { mssql.close(); } catch (err){ console.log('Closing error!', err); } })();
             res.status(400).json({data: err});
 
         }
 
     })();
-
-
-    mssql.on('error', err => {
-
-        console.log('Error handler: ', err);
-        res.status(401).json({data: err});
-
-    });
 
 }
