@@ -1,0 +1,1 @@
+node %~dp0iinCoreWeb.server.BABEL_COMPILED.js
