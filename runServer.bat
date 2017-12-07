@@ -1,1 +1,2 @@
-node %~dp0iinCoreWeb.server.BABEL_COMPILED.js
+cd %~dp0
+npm run start

@@ -4,7 +4,12 @@
   "description": "Web layout for IIN CORE services and products",
   "main": "iinCoreWeb.server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install": "npm install && npm run start",
+    "start": "concurrently \"node iinCoreWeb.server.BABEL_COMPILED.js\" \"sleepms 1000 && opn http://localhost:3000/\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jcolmenarez/iin-core-web.git"
   },
   "author": "Javier Colmenárez",
   "license": "UNLICENSED",
@@ -14,6 +19,9 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1"
+    "babel-preset-es2015": "^6.24.1",
+    "concurrently": "^3.5.1",
+    "opn-cli": "^3.1.0",
+    "sleep-ms": "^2.0.1"
   }
 }
