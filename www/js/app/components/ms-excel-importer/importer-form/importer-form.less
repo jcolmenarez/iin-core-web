@@ -156,16 +156,27 @@
             padding: 5px;
         }
 
-        thead th {
+        thead {
 
-            font-family: 'pn-semibold', sans-serif;
-            font-size: 1.25em;
-            text-align: center;
+            th {
+                font-family: 'pn-semibold', sans-serif;
+                font-size: 1.25em;
+                text-align: center;
+            }
 
         }
 
-        tbody tr:nth-child(odd) {
-           background-color: #ccc;
+        tbody {
+
+            tr:nth-child(odd) {
+                background-color: #ccc;
+            }
+
+            td.item-count {
+                color: #888;
+                padding: 0 20px;
+            }
+            
         }
 
     }

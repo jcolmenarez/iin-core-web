@@ -57,6 +57,7 @@
 
         <thead>
         
+            <th>#</th>
             <th ng-if="$ctrl.isEventPromoCodeMode">Event IDs</th>
             <th>Student IDs</th>
             <th ng-if="$ctrl.isEventPromoCodeMode">Promo Codes</th>
@@ -68,6 +69,7 @@
         
             <tr ng-repeat="row in $ctrl.excelData">
 
+                <td class="item-count">{{ ::$index + 1 }}</td>
                 <td ng-if="$ctrl.isEventPromoCodeMode">{{ ::row.EventId }}</td>
                 <td>{{ ::row.StudentId }}</td>
                 <td ng-if="$ctrl.isEventPromoCodeMode">{{ ::row.PromotionCode }}</td>

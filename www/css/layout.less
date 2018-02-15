@@ -1,8 +1,16 @@
 /*--- Layout ---*/
+html, body {
+  height: 100%;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+
 .root-container {
   display: block;
+  height: auto;
   margin: 0 auto;
-  max-width: 960px;
+  min-height: 100%;
   min-width: 1px;
   position: relative;
   width: auto;
@@ -15,8 +23,8 @@
 
 /*--- Header ---*/
 .main-header {
-
   padding: 25px 0;
+  position: relative;
   text-align: center;
 
   figure {
@@ -51,10 +59,22 @@
 /*--- Sidebar ---*/
 .main-sidebar {}
 
+
+/*--- Main content ---*/
+.main-container {
+  padding-bottom: 70px;
+  position: relative;
+}
+
+
 /*--- Footer ---*/
 .main-footer{
-  
+  bottom: 0;
+  min-width: 100%;
   padding: 25px 0;
+  position: fixed;
+  top: auto;
+  width: 100%;
 
   p {
     text-align: center;

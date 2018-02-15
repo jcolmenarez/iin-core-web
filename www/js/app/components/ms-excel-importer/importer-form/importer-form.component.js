@@ -20,7 +20,8 @@ export const MSExcelImporterFormComponent = {
                     </select>
 
                     <p class="file-name" ng-hide="!$ctrl.fileToProcess">
-                        <i class="fa fa-table"></i> {{ $ctrl.fileToProcess }}
+                        <i class="fa fa-table"></i> {{ $ctrl.fileToProcess }}<br />
+                        {{ '(' + $ctrl.resultingRows + ' students found)' }}
                     </p>
 
                     <label class="input-file-field">
@@ -54,6 +55,8 @@ function MSExcelImporterFormController ($scope, $state, XLSX){
         ctrl.title = 'MS Excel Sheets Importer';
         ctrl.isEventPromoCodeMode = false;
         ctrl.selectedFile = null;
+        ctrl.resultingRows = null;
+        ctrl.excelData = null;
         ctrl.buttonEnabled = false;
         ctrl.fileToProcess = null;
         ctrl.courseId = null;
@@ -72,13 +75,32 @@ function MSExcelImporterFormController ($scope, $state, XLSX){
             ctrl.buttonEnabled = true;
             ctrl.fileToProcess = el.files[0].name;
 
+            readFile(ctrl.selectedFile, rows => {
+
+                $scope.$apply(() => {
+                    ctrl.resultingRows = rows.length;
+                    ctrl.excelData = rows;
+                });
+
+            });
+
         });
 
     };
 
     this.processFile = () => {
 
-        let file = ctrl.selectedFile;
+        if (ctrl.excelData && ctrl.excelData !== null){ showResults(); }
+
+        readFile(ctrl.selectedFile, rows => {
+
+            if (rows.length > 0){ showResults(rows); }
+
+        });
+
+    };
+
+    const readFile = (file, cb) => {
 
         if (file){
 
@@ -91,22 +113,23 @@ function MSExcelImporterFormController ($scope, $state, XLSX){
                     firstSheetName = workbook.SheetNames[0],
                     excelData = XLSX.utils.sheet_to_json(workbook.Sheets[firstSheetName]);
 
-                if (excelData.length > 0){
-
-                    $state.go('msExcelImporterResults', {
-                        courseId: ctrl.courseId,
-                        excelData: excelData,
-                        isEventPromoCodeMode: ctrl.isEventPromoCodeMode
-                    });
-
-
-                }
+                if (cb){ cb(excelData); }
 
             };
 
             reader.readAsBinaryString(file);
 
         }
+
+    };
+
+    const showResults = (rows) => {
+        
+        $state.go('msExcelImporterResults', {
+            courseId: ctrl.courseId,
+            excelData: rows || ctrl.excelData,
+            isEventPromoCodeMode: ctrl.isEventPromoCodeMode
+        });
 
     };
 
