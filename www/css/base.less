@@ -1,79 +1,294 @@
 /*--- Global Settings ---*/
 @font-size: 16px;
 
-@appBg: #f9f9fb;
-@borderColor: #c5ced5;
-@default: #3b434e;
-@primary: #338A86;
+/*--- Color Palette ---*/
+@white: #f9f9fb; // Main background
+@gray: #c5ced5; // Borders
+@darkGray: #b0b0b0;
+@black: #3b434e; // Main font color
+@green: #338A86; // Primary color
+@darkGreen: #146c66;
+@red: #e61c26; // Secondary color and errors
+@darkRed: #aa0810;
 
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /*--- Mixins ---*/
 .defaultFont() {
-  font-family: 'pn-regular', sans-serif;
-  font-size: @font-size;
-  font-weight: normal;
-  line-height: @font-size * 1.25;
+    font-family: 'pn-regular', sans-serif;
+    font-size: @font-size;
+    font-weight: normal;
+    line-height: @font-size * 1.25;
 }
 
 .semiBold() {
-  font-family: 'pn-semibold', sans-serif;
+    font-family: 'pn-semibold', sans-serif;
 }
 
 /*--- Base Styles ---*/
 html, body {
-  .defaultFont();
-  background: @appBg;
-  color: @default;
+    .defaultFont();
+    background: @white;
+    color: @black;
 }
 
 a {
-  color: @primary;
-  text-decoration: none;
+    color: @green;
+    text-decoration: none;
 
-  &:hover, &:focus, &:hover i, .active {
-    color: #146C66;
-  }
-
+    &:hover, &:focus, &:hover i, .active {
+        color: #146C66;
+    }
 }
 
 strong {
-  .semiBold();
+    .semiBold();
 }
 
 small {
-  font-size: .75em;
+    font-size: .75em;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  .semiBold();
+    .semiBold();
 }
 
 h1 {
-  font-size: @font-size * 1.25;
+    font-size: @font-size * 1.25;
 }
 
 h2 {
-  font-size: @font-size * 1.125;
+    font-size: @font-size * 1.125;
 }
 
 .h2(){
-  .semiBold();
-  font-size: @font-size * 1.125;
+    .semiBold();
+    font-size: @font-size * 1.125;
 }
 
 h3 {
-  .defaultFont();
+    .defaultFont();
 }
 
 hr {
-  border: 0 none;
-  border-bottom: 1px @borderColor solid;
-  width: 100%;
-  margin: 1em auto;
-  height: 0;
+    border: 0 none;
+    border-bottom: 1px @gray solid;
+    width: 100%;
+    margin: 1em auto;
+    height: 0;
+}
+
+.full-width {
+    min-width: 100% !important;
+    width: 100% !important;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+/*--- Forms ---*/
+form {    
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 0 auto;
+    min-width: 480px;
+    padding: 15px 25px;
+    position: relative;
+    width: auto;
+
+    .form-control-group {
+        display: block;
+        margin: 10px auto 0;
+        position: relative;
+
+        &:after {
+          content: '';
+          display: table;
+          clear: both;
+        }
+
+        label, input {
+            display: inline-block;
+            font-size: 100%;
+            position: relative;
+        }
+
+        label {
+            float: left;
+            padding: 7px 15px 0 0;
+            text-align: right;
+            vertical-align: middle;
+            width: 35%;
+        }
+
+        input {
+            float: right;
+            margin: 0;
+            min-height: 1em;
+            padding: 5px 10px;
+            width: 65%;
+        }
+    }
+
+    .paired-form-control {
+        min-width: 45% !important;
+    }
+
+    button + .form-control {
+        margin-top: 20px;
+    }
+
+
+    .dropdown-label {
+        display: block;
+        font-family: 'pn-semibold', sans-serif;
+        margin-bottom: 4px;
+        position: relative;
+        text-align: left;
+    }
+
+    .dropdown-field {
+        display: block;
+        height: 40px;
+        margin: 0 0 15px;
+        min-height: 40px;
+        min-width: 45%;
+        padding: 10px;
+        position: relative;
+    }
+}
+
+/*--- Buttons ---*/
+input[type="button"], button, .btn, .input-file-field {
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 100%;
+    height: 40px;
+    margin-right: 15px;
+    min-height: 40px;
+    overflow: hidden;
+    padding: 10px 25px;
+    position: relative;
+    text-align: center;
+    width: auto;
+
+    i.fa {
+        margin-right: 8px;
+    }
+
+    span {
+        display: inline-block;
+    }
+
+    &:disabled, &:disabled:hover {
+        background-color: #d3d7db !important;
+        color: #bec6cd !important;
+        cursor: not-allowed;
+    }
+
+    &:focus {
+        outline: none !important;
+    }
+
+    &.green-btn {
+        background-color: @green;
+
+        &:hover {
+          background-color: @darkGreen;
+        }
+    }
+
+    &.red-btn {
+        background-color: @red;
+
+        &:hover {
+          background-color: @darkRed;
+        }
+    }
+
+    &.gray-btn {
+        background-color: @gray;
+        color: @black;
+
+        &:hover {
+          background-color: @darkGray;
+        }
+    }
+
+    &.tab-btn {
+        background-color: @white;
+        border: 1px solid @gray;
+        border-bottom: none !important;
+        border-radius: 5px 5px 0 0 !important;
+        box-shadow: inset 0 -3px 1em @gray;
+        color: @black;
+
+        &:hover {
+            background-color: #efefef;
+        }
+
+        &.active, &.active:hover {
+            background-color: @gray;
+            box-shadow: inset 0 -3px 1em @darkGray;
+            text-shadow: 1px 1px 0 @white;
+        }
+    }
+}
+
+.input-file-field {
+
+    .form-control[type="file"] {
+        position: fixed;
+        top: -1000px;
+    }
+
+}
+
+/*--- Tables ---*/
+.table {
+    border: 1px solid #ccc;
+    min-width: 480px;
+    margin: 10px auto 20px;
+
+    th, td {
+        padding: 5px;
+    }
+
+    thead {
+
+        th {
+            font-family: 'pn-semibold', sans-serif;
+            font-size: 1.25em;
+            text-align: center;
+        }
+
+    }
+
+    tbody {
+
+        tr:nth-child(odd) {
+            background-color: #ccc;
+        }
+
+        td.hint-cell {
+            color: #888;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+    }
+
 }

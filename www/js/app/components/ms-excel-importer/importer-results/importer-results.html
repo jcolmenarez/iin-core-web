@@ -1,16 +1,83 @@
 <section class="component-container" id="ms-excel-importer-results-container">
 
-    <!--div class="loading-container" ng-show="$ctrl.isLoading">
-        <span>
-            <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-            Loading...
-        </span>
-    </div-->
+    <!-- Database settings form and quick info section -->
+    <form id="db-config-form" ng-if="!$ctrl.showingResults">
 
+        <button class="green-btn" id="update-db-config-btn" type="button" ng-click="$ctrl.shouldUpdateDBConfig()">
+            <i class="fa fa-database"></i>
+            {{ !$ctrl.dbConfigHasChanged ? 'Update DB Configuration' : 'Use default DB Configuration' }}
+        </button>
+
+        <div class="form-control-group" ng-show="$ctrl.dbConfigHasChanged" ng-repeat="(key, value) in $ctrl.dbNewConfig">
+
+            <label for="{{ key }}">{{ $ctrl.dbConfigFieldsInfo[key].name }}</label>
+            <input ng-model="$ctrl.dbNewConfig[key]" name="{{ key }}" placeholder="{{ $ctrl.dbConfigFieldsInfo[key].placeholder }}" type="{{ $ctrl.dbConfigFieldsInfo[key].type }}" />
+
+        </div>
+
+    </form>
+
+    <!-- Action buttons top container -->
+    <div class="actions-box">
+
+        <button class="red-btn" ng-click="$ctrl.submitExcelData()" ng-if="!$ctrl.showingResults" type="button">
+            <i class="fa fa-arrow-up"></i> Submit Excel data
+        </button>
+        
+    </div>
+
+    <!-- Processed data preview section -->
+    <h3 ng-if="!$ctrl.showingResults">{{ ::$ctrl.title }}</h3>
+    <table class="table table-striped full-width" ng-if="!$ctrl.showingResults">
+
+        <thead>
+        
+            <th>#</th>
+            <th ng-if="$ctrl.isEventPromoCodeMode">Event ID</th>
+            <th>Student ID</th>
+            <th ng-if="$ctrl.isEventPromoCodeMode">Promo Code</th>
+            <th ng-if="$ctrl.isEventPromoCodeMode">Activated</th>
+
+        </thead>
+        
+        <tbody>
+        
+            <tr ng-repeat="row in $ctrl.excelData">
+
+                <td class="hint-cell">{{ ::$index + 1 }}</td>
+                <td ng-if="$ctrl.isEventPromoCodeMode">{{ ::row.EventId }}</td>
+                <td>{{ ::row.StudentId }}</td>
+                <td ng-if="$ctrl.isEventPromoCodeMode">{{ ::row.PromotionCode }}</td>
+                <td ng-if="$ctrl.isEventPromoCodeMode">{{ ::row.Activated }}</td>
+
+            </tr>
+
+            <tr ng-if="$ctrl.excelData.length == 0">
+                <td class="hint-cell" colspan="{{ $ctrl.isEventPromoCodeMode ? 5 : 2 }}">No results found yet</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+    <!-- Server interaction's final results section -->
     <div class="results-container" ng-if="$ctrl.showingResults">
 
-        <p class="results-list-title">Results List:</p>
-        <ul>
+        <p class="results-list-title">CORE Importing Results<br /><span>Click on any category tab to show the info</span></p>
+        <div id="results-summary-box">
+            <button ng-class="['summary-category tab-btn', {'active': $ctrl.summaryTableLabel == 'General'}]" type="button" ng-click="$ctrl.updateSummary('General')">
+                <i class="fa fa-th"></i> {{ $ctrl.registersInProcess + ' unprocessed / ' + $ctrl.excelData.length + ' in total' }}
+            </button>
+            <button ng-class="['summary-category tab-btn', {'active': $ctrl.summaryTableLabel == 'Successful'}]" type="button" ng-click="$ctrl.updateSummary('Successful')">
+                <i class="fa fa-check-circle"></i> {{ $ctrl.successfulRegisters.length + ' successful registers' }}
+            </button>
+            <button ng-class="['summary-category tab-btn', {'active': $ctrl.summaryTableLabel == 'Failed'}]" type="button" ng-click="$ctrl.updateSummary('Failed')">
+                <i class="fa fa-exclamation-circle"></i> {{ $ctrl.failedRegisters.length + ' failed registers' }}
+            </button>
+        </div>
+
+        <p ng-if="!$ctrl.showingSummaryTable" class="results-list-title">General Results Detailed List</p>
+        <ul ng-if="!$ctrl.showingSummaryTable">
             <li ng-class="{
                     'pending': !result.isComplete,
                     'error': result.isComplete && result.isError,
@@ -28,62 +95,53 @@
             </li>
         </ul>
 
-        <a ng-class="['download-results-log', {'disabled': !$ctrl.isProcessingCompleted}]" ng-href="{{ $ctrl.resultsList() }}" download="results-log.txt">
-            <i class="fa fa-arrow-down"></i>
-            Download results log file
+        <a ng-if="!$ctrl.showingSummaryTable"
+            ng-class="['download-results-log', {'disabled': !$ctrl.isProcessingCompleted}]"
+            ng-href="{{ $ctrl.resultsList() }}"
+            download="results-log.txt">
+            <i class="fa fa-arrow-down"></i> Download general results log file
         </a>
+
+        <p class="results-list-title" ng-if="$ctrl.showingSummaryTable">{{ $ctrl.summaryTableLabel + ' Registers Summary Table' }}</span></p>
+        <table class="table table-striped full-width" ng-if="$ctrl.showingSummaryTable">
+
+            <thead>
+            
+                <th>#</th>
+                <th>Query</th>
+                <th>Student ID</th>
+                <th ng-if="$ctrl.summaryTableLabel == 'Failed'">Error</th>
+
+            </thead>
+            
+            <tbody>
+            
+                <tr ng-repeat="row in $ctrl.summaryTableData">
+
+                    <td class="hint-cell">{{ ::$index + 1 }}</td>
+                    <td class="hint-cell">{{ ::row.query }}</td>
+                    <td>{{ ::row.StudentId }}</td>
+                    <td ng-if="$ctrl.summaryTableLabel == 'Failed'">{{ ::row.error }}</td>
+
+                </tr>
+
+                <tr ng-if="$ctrl.summaryTableData.length == 0">
+                    <td class="hint-cell" colspan="{{ $ctrl.summaryTableLabel == 'Failed' ? 4 : 3 }}">No results found yet</td>
+                </tr>
+
+            </tbody>
+
+        </table>
 
     </div>
 
-    <form id="db-config-form" ng-if="!$ctrl.showingResults">
+    <!-- Action buttons bottom container -->
+    <div class="actions-box">
 
-        <button class="btn btn-primary" id="update-db-config-btn" type="button" ng-click="$ctrl.shouldUpdateDBConfig()">
-            <i class="fa fa-database"></i>
-            {{ !$ctrl.dbConfigHasChanged ? 'Update DB Configuration' : 'Use default DB Configuration' }}
+        <button class="red-btn" ng-click="$ctrl.submitExcelData()" ng-if="!$ctrl.showingResults" type="button">
+            <i class="fa fa-arrow-up"></i> Submit Excel data
         </button>
-
-        <div class="form-control-group" ng-show="$ctrl.dbConfigHasChanged" ng-repeat="(key, value) in $ctrl.dbNewConfig">
-
-            <label for="{{ key }}">{{ $ctrl.dbConfigFieldsInfo[key].name }}</label>
-            <input ng-model="$ctrl.dbNewConfig[key]" name="{{ key }}" placeholder="{{ $ctrl.dbConfigFieldsInfo[key].placeholder }}" type="{{ $ctrl.dbConfigFieldsInfo[key].type }}" />
-
-        </div>
-
-    </form>
-
-    <h3 ng-if="!$ctrl.showingResults">{{ ::$ctrl.title }}</h3>
-
-    <table class="table table-striped" ng-if="!$ctrl.showingResults">
-
-        <thead>
         
-            <th>#</th>
-            <th ng-if="$ctrl.isEventPromoCodeMode">Event IDs</th>
-            <th>Student IDs</th>
-            <th ng-if="$ctrl.isEventPromoCodeMode">Promo Codes</th>
-            <th ng-if="$ctrl.isEventPromoCodeMode">Activated</th>
-
-        </thead>
-        
-        <tbody>
-        
-            <tr ng-repeat="row in $ctrl.excelData">
-
-                <td class="item-count">{{ ::$index + 1 }}</td>
-                <td ng-if="$ctrl.isEventPromoCodeMode">{{ ::row.EventId }}</td>
-                <td>{{ ::row.StudentId }}</td>
-                <td ng-if="$ctrl.isEventPromoCodeMode">{{ ::row.PromotionCode }}</td>
-                <td ng-if="$ctrl.isEventPromoCodeMode">{{ ::row.Activated }}</td>
-
-            </tr>
-
-        </tbody>
-
-    </table>
-
-    <button class="btn btn-upload" ng-click="$ctrl.submitExcelData()" ng-if="!$ctrl.showingResults" type="button">
-        <i class="fa fa-arrow-up"></i>
-        Submit Excel data
-    </button>
+    </div>
 
 </section>

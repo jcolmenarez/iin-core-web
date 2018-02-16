@@ -1,0 +1,39 @@
+<section class="component-container" id="ms-excel-importer-container">
+
+    <h3 id="excel-importer-title">{{ ::$ctrl.title }}</h3>
+    <form id="excel-importer-form">
+
+        <div class="form-check" id="event-promo-code-mode">
+            <label class="form-check-label" for="">
+                <input class="form-check-input" ng-model="$ctrl.isEventPromoCodeMode" type="checkbox" />
+                Use Event Promotion Code Mode
+            </label>
+        </div>
+
+        <label class="dropdown-label" for="course_id" ng-show="!$ctrl.isEventPromoCodeMode">Courses to enroll in</label>
+        <select class="form-control dropdown-field" name="course_id" ng-model="$ctrl.courseId" ng-show="!$ctrl.isEventPromoCodeMode" required>
+
+            <option ng-repeat="option in $ctrl.courses" ng-value="option.id">{{ option.name }}</option>
+
+        </select>
+
+        <p class="file-name" ng-hide="!$ctrl.fileToProcess">
+            <i class="fa fa-table"></i> {{ $ctrl.fileToProcess }}<br />
+            {{ '(' + $ctrl.resultingRows + ' students found)' }}
+        </p>
+
+        <label class="paired-form-control input-file-field green-btn pull-left">
+
+            <input class="form-control" name="file" onchange="angular.element(this).scope().$ctrl.loadFile(this)" type="file" required />
+
+            <span><i class="fa fa-file"></i>Select file to import</span>
+
+        </label>
+
+        <button class="paired-form-control btn red-btn pull-right" ng-click="$ctrl.processFile()" ng-disabled="!$ctrl.buttonEnabled" type="button">
+            <i class="fa fa-gear"></i>Process Excel file
+        </button>
+
+    </form>
+
+</section>

@@ -12,13 +12,19 @@ function MSExcelImporterResultsController ($filter, $stateParams, MSExcelImporte
 
     this.$onInit = () => {
 
-        ctrl.title = 'Excel Sheet Importer Results';
+        ctrl.title = 'MS Excel Sheet Importer Results';
         ctrl.excelData = $stateParams.excelData;
         ctrl.courseId = $stateParams.courseId;
         ctrl.isEventPromoCodeMode = $stateParams.isEventPromoCodeMode;
+        ctrl.showingSummaryTable = false;
+        ctrl.summaryTableLabel = 'General';
+        ctrl.summaryTableData = null;
         ctrl.isProcessingCompleted = false;
         ctrl.showingResults = false;
         ctrl.results = {};
+        ctrl.successfulRegisters = [];
+        ctrl.failedRegisters = [];
+        ctrl.registersInProcess = ctrl.excelData.length;
         ctrl.dbConfigHasChanged = false;
         ctrl.dbNewConfig = {
             server: null,
@@ -103,6 +109,14 @@ function MSExcelImporterResultsController ($filter, $stateParams, MSExcelImporte
 
     };
 
+    this.updateSummary = type => {
+
+        ctrl.showingSummaryTable = type !== 'General';
+        ctrl.summaryTableLabel = type;
+        ctrl.summaryTableData = type !== 'General' ? (type === 'Failed' ? ctrl.failedRegisters : ctrl.successfulRegisters) : null;
+
+    };
+
     
     const dateAndTimeInfo = () => {
 
@@ -144,6 +158,11 @@ function MSExcelImporterResultsController ($filter, $stateParams, MSExcelImporte
 
         MSExcelImporterServices[ctrl.isEventPromoCodeMode ? 'insertEventPromotionCode' : 'enrollStudentInEvent'](postData).then(data => {
 
+            let customizedRow = row;
+            customizedRow['query'] = n + 1;
+            ctrl.successfulRegisters.push(customizedRow);
+            ctrl.registersInProcess--;
+
             ctrl.results[row.StudentId].isComplete = true;
             ctrl.results[row.StudentId].isError = false;
             ctrl.results[row.StudentId].messages.push(`
@@ -169,6 +188,12 @@ function MSExcelImporterResultsController ($filter, $stateParams, MSExcelImporte
                 errorMssg = !isErrorDefined || angular.isUndefined(err.originalError) ?
                     'Unknown error' :
                     angular.isUndefined(err.originalError.info) ? err.originalError.message : err.originalError.info.message;
+
+            let customizedRow = row;
+            customizedRow['query'] = n + 1;
+            customizedRow['error'] = `${err.code} - ${err.name}: ${errorMssg}`;
+            ctrl.failedRegisters.push(customizedRow);
+            ctrl.registersInProcess--;
 
             ctrl.results[row.StudentId].isComplete = true;
             ctrl.results[row.StudentId].isError = true;
