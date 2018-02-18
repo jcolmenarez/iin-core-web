@@ -10,6 +10,8 @@
 @darkGreen: #146c66;
 @red: #e61c26; // Secondary color and errors
 @darkRed: #aa0810;
+@blue: #007bff;
+@darkBlue: #0069d9;
 
 * {
     -webkit-box-sizing: border-box;
@@ -40,7 +42,7 @@ a {
     color: @green;
     text-decoration: none;
 
-    &:hover, &:focus, &:hover i, .active {
+    &:hover, &:focus, .active {
         color: #146C66;
     }
 }
@@ -185,7 +187,7 @@ input[type="button"], button, .btn, .input-file-field {
     text-align: center;
     width: auto;
 
-    i.fa {
+    .svg-inline--fa {
         margin-right: 8px;
     }
 
@@ -203,13 +205,21 @@ input[type="button"], button, .btn, .input-file-field {
         outline: none !important;
     }
 
-    &.green-btn {
-        background-color: @green;
+    &.blue-btn {
+        background-color: @blue;
 
         &:hover {
-          background-color: @darkGreen;
+          background-color: @darkBlue;
         }
     }
+    
+    &.green-btn {
+            background-color: @green;
+
+            &:hover {
+              background-color: @darkGreen;
+            }
+        }
 
     &.red-btn {
         background-color: @red;

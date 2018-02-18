@@ -1,14 +1,16 @@
 <section class="component-container" id="ms-excel-importer-results-container">
 
     <!-- Database settings form and quick info section -->
-    <form id="db-config-form" ng-if="!$ctrl.showingResults">
+    <form id="db-config-form">
 
-        <button class="green-btn" id="update-db-config-btn" type="button" ng-click="$ctrl.shouldUpdateDBConfig()">
-            <i class="fa fa-database"></i>
+        <p id="db-current-settings">{{ 'The quer' + ($ctrl.excelData.length > 1 ? 'ies ' : 'y ') + (!$ctrl.showingResults ? 'will be' : ($ctrl.excelData.length > 1 ? 'were' : 'was')) + ' sent to ' + ($ctrl.dbNewConfig.server || '10.10.30.22') + ':' + ($ctrl.dbNewConfig.port || '1433') + ' into the database "' + ($ctrl.dbNewConfig.database || 'IIN.QA') + '" by the user "' + ($ctrl.dbNewConfig.user || 'iin_javi') + '"' }}</p>
+
+        <button class="green-btn" id="update-db-config-btn" type="button" ng-click="$ctrl.shouldUpdateDBConfig()" ng-disabled="$ctrl.showingResults">
+            <i class="fas fa-fw fa-database"></i>
             {{ !$ctrl.dbConfigHasChanged ? 'Update DB Configuration' : 'Use default DB Configuration' }}
         </button>
 
-        <div class="form-control-group" ng-show="$ctrl.dbConfigHasChanged" ng-repeat="(key, value) in $ctrl.dbNewConfig">
+        <div class="form-control-group" ng-show="!$ctrl.showingResults && $ctrl.dbConfigHasChanged" ng-repeat="(key, value) in $ctrl.dbNewConfig">
 
             <label for="{{ key }}">{{ $ctrl.dbConfigFieldsInfo[key].name }}</label>
             <input ng-model="$ctrl.dbNewConfig[key]" name="{{ key }}" placeholder="{{ $ctrl.dbConfigFieldsInfo[key].placeholder }}" type="{{ $ctrl.dbConfigFieldsInfo[key].type }}" />
@@ -21,7 +23,19 @@
     <div class="actions-box">
 
         <button class="red-btn" ng-click="$ctrl.submitExcelData()" ng-if="!$ctrl.showingResults" type="button">
-            <i class="fa fa-arrow-up"></i> Submit Excel data
+            <i class="fas fa-fw fa-arrow-up"></i> Submit MS Excel Data
+        </button>
+
+        <button class="green-btn" ng-click="$ctrl.startAgain()" ng-if="$ctrl.showingResults" ng-disabled="!$ctrl.isProcessingCompleted" type="button">
+            <i class="fas fa-fw fa-file-excel"></i> Import New File
+        </button>
+
+        <button class="red-btn" ng-click="$ctrl.retryFailedAndUnprocessed()" ng-if="$ctrl.showingResults" ng-disabled="!$ctrl.isProcessingCompleted || ($ctrl.failedRegisters.length <= 0 && $ctrl.registersInProcess <= 0)" type="button">
+            <i class="fas fa-fw fa-redo-alt"></i> Retry Failed / Unprocessed
+        </button>
+
+        <button class="red-btn" ng-click="$ctrl.cancelSubmission()" ng-if="$ctrl.showingResults" ng-disabled="$ctrl.isProcessingCompleted" type="button">
+            <i class="fas fa-fw fa-times-circle"></i> Cancel Submission
         </button>
         
     </div>
@@ -62,36 +76,39 @@
 
     <!-- Server interaction's final results section -->
     <div class="results-container" ng-if="$ctrl.showingResults">
+        
+        <i class="fas fa-fw fa-check-circle" data-fa-symbol="success"></i>
+        <i class="fas fa-fw fa-exclamation-circle" data-fa-symbol="error"></i>
+        <i class="fas fa-fw fa-spinner" data-fa-symbol="spinner"></i>
+        <i class="fas fa-fw fa-times" data-fa-symbol="cancel"></i>
 
         <p class="results-list-title">CORE Importing Results<br /><span>Click on any category tab to show the info</span></p>
         <div id="results-summary-box">
             <button ng-class="['summary-category tab-btn', {'active': $ctrl.summaryTableLabel == 'General'}]" type="button" ng-click="$ctrl.updateSummary('General')">
-                <i class="fa fa-th"></i> {{ $ctrl.registersInProcess + ' unprocessed / ' + $ctrl.excelData.length + ' in total' }}
+                <i class="fas fa-fw fa-th"></i> {{ $ctrl.registersInProcess + ' unprocessed / ' + $ctrl.excelData.length + ' in total' }}
             </button>
             <button ng-class="['summary-category tab-btn', {'active': $ctrl.summaryTableLabel == 'Successful'}]" type="button" ng-click="$ctrl.updateSummary('Successful')">
-                <i class="fa fa-check-circle"></i> {{ $ctrl.successfulRegisters.length + ' successful registers' }}
+                <svg class="svg-inline--fa fa-w-16"><use xlink:href="#success"></use></svg> {{ $ctrl.successfulRegisters.length + ' successful registers' }}
             </button>
             <button ng-class="['summary-category tab-btn', {'active': $ctrl.summaryTableLabel == 'Failed'}]" type="button" ng-click="$ctrl.updateSummary('Failed')">
-                <i class="fa fa-exclamation-circle"></i> {{ $ctrl.failedRegisters.length + ' failed registers' }}
+                <svg class="svg-inline--fa fa-w-16"><use xlink:href="#error"></use></svg> {{ $ctrl.failedRegisters.length + ' failed registers' }}
             </button>
         </div>
 
         <p ng-if="!$ctrl.showingSummaryTable" class="results-list-title">General Results Detailed List</p>
-        <ul ng-if="!$ctrl.showingSummaryTable">
+        <ul class="fa-ul" ng-if="!$ctrl.showingSummaryTable">
             <li ng-class="{
                     'pending': !result.isComplete,
                     'error': result.isComplete && result.isError,
                     'success': result.isComplete && !result.isError
                 }" ng-repeat="result in $ctrl.results">
-                <i ng-class="[
-                        'fa',
-                        'fa-li',
-                        {
-                            'fa-exclamation-circle': result.isComplete && result.isError,
-                            'fa-check-circle': result.isComplete && !result.isError,
-                            'fa-pulse fa-spinner fa-fw': !result.isComplete
-                        }
-                    ]"></i><span ng-class="{'status-entry': !$first}" ng-repeat="status in result.messages">{{ status }}</span>
+                <span class="fa-li">
+                    <svg class="svg-inline--fa fa-w-16 fa-pulse" ng-if="!result.isComplete && (result.isQuerying == 'Yes' || (result.isQuerying == 'Not yet' && !$ctrl.submissionCancelled))"><use xlink:href="#spinner"></use></svg>
+                    <svg class="svg-inline--fa fa-w-16" ng-if="result.isQuerying == 'Not yet' && !result.isComplete && $ctrl.submissionCancelled"><use xlink:href="#cancel"></use></svg>
+                    <svg class="svg-inline--fa fa-w-16" ng-if="result.isQuerying == 'Not anymore' && result.isComplete && result.isError"><use xlink:href="#error"></use></svg>
+                    <svg class="svg-inline--fa fa-w-16" ng-if="result.isQuerying == 'Not anymore' && result.isComplete && !result.isError"><use xlink:href="#success"></use></svg>
+                </span>
+                <span ng-class="{'status-entry': !$first}" ng-repeat="status in result.messages track by $index">{{ status }}</span>
             </li>
         </ul>
 
@@ -99,7 +116,7 @@
             ng-class="['download-results-log', {'disabled': !$ctrl.isProcessingCompleted}]"
             ng-href="{{ $ctrl.resultsList() }}"
             download="results-log.txt">
-            <i class="fa fa-arrow-down"></i> Download general results log file
+            <i class="fas fa-fw fa-arrow-down"></i> Download general results log file
         </a>
 
         <p class="results-list-title" ng-if="$ctrl.showingSummaryTable">{{ $ctrl.summaryTableLabel + ' Registers Summary Table' }}</span></p>
@@ -139,7 +156,19 @@
     <div class="actions-box">
 
         <button class="red-btn" ng-click="$ctrl.submitExcelData()" ng-if="!$ctrl.showingResults" type="button">
-            <i class="fa fa-arrow-up"></i> Submit Excel data
+            <i class="fas fa-fw fa-arrow-up"></i> Submit MS Excel Data
+        </button>
+
+        <button class="green-btn" ng-click="$ctrl.startAgain()" ng-if="$ctrl.showingResults" ng-disabled="!$ctrl.isProcessingCompleted" type="button">
+            <i class="fas fa-fw fa-file-excel"></i> Import New File
+        </button>
+
+        <button class="red-btn" ng-click="$ctrl.retryFailedAndUnprocessed()" ng-if="$ctrl.showingResults" ng-disabled="!$ctrl.isProcessingCompleted || ($ctrl.failedRegisters.length <= 0 && $ctrl.registersInProcess <= 0)" type="button">
+            <i class="fas fa-fw fa-redo-alt"></i> Retry Failed / Unprocessed
+        </button>
+
+        <button class="red-btn" ng-click="$ctrl.cancelSubmission()" ng-if="$ctrl.showingResults" ng-disabled="$ctrl.isProcessingCompleted" type="button">
+            <i class="fas fa-fw fa-times-circle"></i> Cancel Submission
         </button>
         
     </div>

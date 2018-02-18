@@ -18,7 +18,7 @@
         </select>
 
         <p class="file-name" ng-hide="!$ctrl.fileToProcess">
-            <i class="fa fa-table"></i> {{ $ctrl.fileToProcess }}<br />
+            <i class="fas fa-fw fa-table"></i> {{ $ctrl.fileToProcess }}<br />
             {{ '(' + $ctrl.resultingRows + ' students found)' }}
         </p>
 
@@ -26,12 +26,12 @@
 
             <input class="form-control" name="file" onchange="angular.element(this).scope().$ctrl.loadFile(this)" type="file" required />
 
-            <span><i class="fa fa-file"></i>Select file to import</span>
+            <span><i class="fas fa-fw fa-file"></i>Select File to Import</span>
 
         </label>
 
         <button class="paired-form-control btn red-btn pull-right" ng-click="$ctrl.processFile()" ng-disabled="!$ctrl.buttonEnabled" type="button">
-            <i class="fa fa-gear"></i>Process Excel file
+            <i class="fas fa-fw fa-cog"></i>Process MS Excel File
         </button>
 
     </form>

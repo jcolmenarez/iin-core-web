@@ -14,6 +14,11 @@
         text-transform: uppercase;
     }
 
+    #db-current-settings {
+        color: #aaa;
+        margin-bottom: 12px;
+    }
+
     .results-container {
         margin: 20px auto;
         min-width: 400px;
@@ -34,6 +39,7 @@
         ul {
             border-bottom: 1px solid #ccc;
             counter-reset: results;
+            margin-left: 0 !important;
             padding: 10px 0 15px 50px;
             position: relative;
         }
@@ -57,7 +63,7 @@
                 padding-left: 30px;
             }
 
-            > i, span:not(.status-entry) {
+            span:not(.status-entry) {
                 margin-left: 6px;
             }
 
@@ -81,7 +87,7 @@
             margin-top: 20px;
             position: relative;
 
-            &.disabled, &.disabled:hover, &.disabled i, &.disabled:hover i {
+            &.disabled, &.disabled:hover {
                 color: #aaa;
                 cursor: not-allowed;
             }
